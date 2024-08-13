@@ -1,131 +1,62 @@
 //{ Driver Code Starts
-//Initial Template for Java
-
-import java.util.*;
-import java.lang.*;
 import java.io.*;
+import java.util.*;
+
+class IntArray {
+    public static int[] input(BufferedReader br, int n) throws IOException {
+        String[] s = br.readLine().trim().split(" ");
+        int[] a = new int[n];
+        for (int i = 0; i < n; i++) a[i] = Integer.parseInt(s[i]);
+
+        return a;
+    }
+
+    public static void print(int[] a) {
+        for (int e : a) System.out.print(e + " ");
+        System.out.println();
+    }
+
+    public static void print(ArrayList<Integer> a) {
+        for (int e : a) System.out.print(e + " ");
+        System.out.println();
+    }
+}
 
 class GFG {
-	public static void main(String[] args) throws IOException
-	{
-	        BufferedReader br =
-            new BufferedReader(new InputStreamReader(System.in));
-        int t =
-            Integer.parseInt(br.readLine().trim()); // Inputting the testcases
-        while(t-->0)
-        {
-            int n = Integer.parseInt(br.readLine().trim());
-            int a[] = new int[n];
-            // long getAnswer[] = new long[(int)(n)];
-            String inputLine[] = br.readLine().trim().split(" ");
-            for (int i = 0; i < n; i++) {
-                a[i] = Integer.parseInt(inputLine[i]);
-            }
-            
-            Compute obj = new Compute();
-            System.out.println(obj.largest(a, n));
-            
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int t;
+        t = Integer.parseInt(br.readLine());
+        while (t-- > 0) {
+
+            int n;
+            n = Integer.parseInt(br.readLine());
+
+            int[] arr = IntArray.input(br, n);
+
+            Solution obj = new Solution();
+            int res = obj.largest(n, arr);
+
+            System.out.println(res);
         }
-	}
+    }
 }
 
 // } Driver Code Ends
 
- 
-//User function Template for Java
 
-class Compute {
-    
-    public int largest(int arr[], int n)
-    {
-      int max=Integer.MIN_VALUE;
-      for(int i=0;i<n;i++)
-      {
-          if(max<arr[i])
-          {
-              max=arr[i];
-          }
-      }
-      return max;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        // int max=Integer.MIN_VALUE;
-        // for(int i=0;i<n;i++)
-        // {
-        //     if(arr[i]>max)
-        //     {
-        //         max=arr[i];
-        //     }
-            
-        // }
-        // return max;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    //     // int max=0;
-    //     // for(int i=0;i<arr.length;i++)
-    //     // {
-    //     //     if(arr[i]>max)
-    //     //     {
-    //     //         max=arr[i];
-    //     //     }
-    //     // }
-    //     // return max;
-    //       int max = Arrays.stream(arr)
-    //                     .max()
-    //                     .orElse(0);
-      
-    //   return max;
+
+class Solution {
+    public static int largest(int n, int[] arr) {
+        int max=Integer.MIN_VALUE;
+        for(int i=0;i<arr.length;i++)
+        {
+            if(max<arr[i])
+            {
+                max=arr[i];
+            }
+        }
+        return max;
+        // code here
     }
 }

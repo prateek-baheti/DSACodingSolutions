@@ -1,24 +1,19 @@
 //{ Driver Code Starts
-//Initial Template for Java
-import java.util.stream.Collectors; 
-import java.util.*;
+// Initial Template for Java
 import java.io.*;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Main {
 
     public static void main(String[] args) throws Exception {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int tc = Integer.parseInt(br.readLine().trim());
-        while (tc-- > 0) {
-            String[] inputLine;
-            int n = Integer.parseInt(br.readLine().trim());
-            int[] arr = new int[n];
-            inputLine = br.readLine().trim().split(" ");
-            for (int i = 0; i < n; i++) {
-                arr[i] = Integer.parseInt(inputLine[i]);
-            }
-
-            int ans = new Solution().print2largest(arr, n);
+        Scanner sc = new Scanner(System.in);
+        int t = Integer.parseInt(sc.nextLine());
+        while (t-- > 0) {
+            String[] arr1Str = sc.nextLine().split(" ");
+            int[] arr = Arrays.stream(arr1Str).mapToInt(Integer::parseInt).toArray();
+            Solution ob = new Solution();
+            int ans = ob.print2largest(arr);
             System.out.println(ans);
         }
     }
@@ -27,12 +22,13 @@ public class Main {
 // } Driver Code Ends
 
 
-//User function Template for Java
+// User function Template for Java
 
 class Solution {
-    int print2largest(int arr[], int n) {
+    public int print2largest(int[] arr) {
         int max=Integer.MIN_VALUE;
-        for(int i=0;i<n;i++)
+        // Code Here
+        for(int i=0;i<arr.length;i++)
         {
             if(max<arr[i])
             {
@@ -40,107 +36,13 @@ class Solution {
             }
         }
         int second_Largest=-1;
-        for(int i=0;i<n;i++)
+        for(int i=0;i<arr.length;i++)
         {
-            if(arr[i]!=max&&arr[i]>second_Largest)
+            if(second_Largest<arr[i]&&arr[i]!=max)
             {
                 second_Largest=arr[i];
             }
         }
         return second_Largest;
-
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        // int largest=Integer.MIN_VALUE;
-        // for(int i=0;i<n;i++)
-        // {
-        //     if(arr[i]>largest)
-        //     {
-        //         largest=arr[i];
-        //     }
-        // }
-        // int second_Largest=-1;
-        // for(int i=0;i<n;i++)
-        // {
-        //     if(arr[i]>second_Largest && arr[i]!=largest)
-        //     {
-        //         second_Largest=arr[i];
-        //     }
-        // }
-        // return second_Largest;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        // code here
-        // int largest=0;
-        // for(int i=0;i<n;i++)
-        // {
-        //     if(arr[i]>largest)
-        //     {
-        //         largest=arr[i];
-        //     }
-        // }
-        // int secondLargest=-1;
-        // for(int i=0;i<n;i++)
-        // {
-        //     if(arr[i]>secondLargest && arr[i]!=largest )
-        //     {
-        //         secondLargest=arr[i];
-        //     }
-        // }
-        
-        // return secondLargest;
     }
 }

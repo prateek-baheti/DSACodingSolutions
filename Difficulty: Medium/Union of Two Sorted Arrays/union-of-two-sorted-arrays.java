@@ -54,8 +54,9 @@ class Solution
     //Function to return a list containing the union of the two arrays.
     public static ArrayList<Integer> findUnion(int arr1[], int arr2[], int n, int m)
     {
-        ArrayList<Integer> array=new ArrayList<Integer>();
-        Set<Integer> set=new HashSet<Integer>();
+        
+        ArrayList<Integer> array=new ArrayList<>();
+        HashSet<Integer> set=new HashSet<>();
         for(int i=0;i<arr1.length;i++)
         {
             set.add(arr1[i]);
@@ -70,50 +71,7 @@ class Solution
         }
         array.sort((o1,o2)->o1.compareTo(o2));
         return array;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        // ArrayList<Integer> li=new ArrayList<>();
-        // Set<Integer> set=new HashSet<>();
-        // for(int i=0;i<arr1.length;i++)
-        // {
-        //     set.add(arr1[i]);
-        // }
-        // for(int i=0;i<arr2.length;i++)
-        // {
-        //     set.add(arr2[i]);
-        // }
-        // for(Integer i:set)
-        // {
-        //     li.add(i);
-        // }
-        // li.sort(((o1, o2) -> o1.compareTo(o2)));
-        // return li;
-    
-        
-       
+        // add your code here
     }
 }
 

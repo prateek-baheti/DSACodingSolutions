@@ -27,22 +27,21 @@ public class Main {
 class Solution {
     public int print2largest(int[] arr) {
         int max=Integer.MIN_VALUE;
-        // Code Here
         for(int i=0;i<arr.length;i++)
         {
-            if(max<arr[i])
+            if(arr[i]>max)
             {
                 max=arr[i];
             }
         }
-        int second_Largest=-1;
-        for(int i=0;i<arr.length;i++)
-        {
-            if(second_Largest<arr[i]&&arr[i]!=max)
+        int second_Smallest=-1;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]>second_Smallest && arr[i]!=max)
             {
-                second_Largest=arr[i];
+                second_Smallest=arr[i];
             }
         }
-        return second_Largest;
+        return second_Smallest;
+        // Code Here
     }
 }

@@ -35,7 +35,7 @@ class gfg {
 class Solution {
     static int searchInSorted(int arr[], int N, int K) {
         
-        for(int i=0;i<N;i++)
+        for(int i=0;i<arr.length;i++)
         {
             if(arr[i]==K)
             {
@@ -43,7 +43,6 @@ class Solution {
             }
         }
         return -1;
-
         // Your code here
     }
 }

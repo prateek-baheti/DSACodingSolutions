@@ -46,35 +46,20 @@ class Array {
 class Solution {
     // Function to find the leaders in the array.
     static ArrayList<Integer> leaders(int n, int arr[]) {
-        // Your code here
-        ArrayList<Integer> array=new ArrayList<Integer>();
-        int max = arr[n-1];
-        array.add(max);
+        ArrayList<Integer> array=new ArrayList<>();
         
-        for(int i= n-2;i>=0;i--){
-            if(arr[i]>=max){
-                array.add(arr[i]);
-                max=arr[i];
-            }
+        int max=Integer.MIN_VALUE;
+        for(int i=n-1;i>=0;i--)
+        {
             
+            if(arr[i]>=max)
+            {
+                array.add(arr[i]);
+            }
+            max=Math.max(max,arr[i]);
         }
-        Collections.sort(array,Collections.reverseOrder());
-        // int count=0;
-        // for(int i=0;i<arr.length;i++)
-        // {
-        //     for(int j=i+1;j<arr.length-1;j++)
-        //     {
-        //         if(arr[i]<arr[j])
-        //         {
-        //             count=1;
-        //         }
-        //     }
-        //     if(count==0)
-        //     {
-        //         array.add(arr[i]);
-        //     }
-        //     count=0;
-        // }
+        Collections.reverse(array);
         return array;
+        // Your code here
     }
 }

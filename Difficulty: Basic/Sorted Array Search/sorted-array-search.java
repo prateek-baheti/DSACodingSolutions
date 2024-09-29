@@ -34,15 +34,15 @@ class gfg {
 
 class Solution {
     static int searchInSorted(int arr[], int N, int K) {
-        
+        int value=-1;
         for(int i=0;i<arr.length;i++)
         {
             if(arr[i]==K)
             {
-                return 1;
+                value=1;
             }
         }
-        return -1;
+        return value;
         // Your code here
     }
 }

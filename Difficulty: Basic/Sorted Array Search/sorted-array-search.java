@@ -10,22 +10,18 @@ class gfg {
         int t = Integer.parseInt(read.readLine());
 
         while (t-- > 0) {
-            String s[] = read.readLine().trim().split("\\s+");
-
-            int n = Integer.parseInt(s[0]);
-            int k = Integer.parseInt(s[1]);
-
+            String inputLine[] = read.readLine().trim().split(" ");
+            int n = inputLine.length;
             int arr[] = new int[n];
 
-            String st[] = read.readLine().trim().split("\\s+");
-
             for (int i = 0; i < n; i++) {
-                arr[i] = Integer.parseInt(st[i]);
+                arr[i] = Integer.parseInt(inputLine[i]);
             }
+            int k = Integer.parseInt(read.readLine());
 
             Solution obj = new Solution();
 
-            System.out.println(obj.searchInSorted(arr, n, k));
+            System.out.println(obj.searchInSorted(arr, k));
         }
     }
 }
@@ -33,16 +29,15 @@ class gfg {
 
 
 class Solution {
-    static int searchInSorted(int arr[], int N, int K) {
-        int value=-1;
+    static boolean searchInSorted(int arr[], int k) {
+        // Your code here
         for(int i=0;i<arr.length;i++)
         {
-            if(arr[i]==K)
+            if(arr[i]==k)
             {
-                value=1;
+                return true;
             }
         }
-        return value;
-        // Your code here
+        return false;
     }
 }

@@ -17,9 +17,13 @@ public class Main {
             for (String token : tokens) {
                 nums.add(Integer.parseInt(token));
             }
-
+            int[] arr = new int[nums.size()];
+            int idx = 0;
+            for (int i : nums) arr[idx++] = i;
             Solution solution = new Solution();
-            System.out.println(solution.pairWithMaxSum(nums));
+            System.out.println(solution.pairWithMaxSum(arr));
+
+            System.out.println("~");
         }
 
         scanner.close();
@@ -33,16 +37,18 @@ public class Main {
 
 class Solution {
     // Function to find pair with maximum sum
-    public int pairWithMaxSum(List<Integer> arr) {
+    public int pairWithMaxSum(int arr[]) {
         // Your code goes here
-        int max=Integer.MIN_VALUE;
         int sum=0;
-        for(int i=0;i<arr.size()-1;i++)
+       int maxLength=Integer.MIN_VALUE;
+        for(int i=0;i<arr.length-1;i++)
         {
-            sum=arr.get(i)+arr.get(i+1);
-            max=Math.max(sum,max);
+            sum=arr[i]+arr[i+1];
+            maxLength=Math.max(sum,maxLength);
             sum=0;
+            
         }
-        return max;
+        return maxLength;
+        
     }
 }

@@ -33,28 +33,76 @@ class Main {
 
 class Solution {
     public int longestSubarray(int[] arr, int k) {
-         HashMap<Integer, Integer> map = new HashMap<>();
-        int sum = 0, maxLength = 0;
-
-        for (int i = 0; i < arr.length; i++) {
-            sum += arr[i];
-
-            // Case 1: If sum itself is k, update maxLength
-            if (sum == k) {
-                maxLength = i + 1;
+        HashMap<Integer,Integer> map=new HashMap<>();
+        int sum=0;int maxLength=0;
+        for(int i=0;i<arr.length;i++)
+        {
+            sum=sum+arr[i];
+            if(sum==k)
+            {
+                maxLength=i+1;
             }
-
-            // Case 2: If sum - k exists in map, update maxLength
-            if (map.containsKey(sum - k)) {
-                maxLength = Math.max(maxLength, i - map.get(sum - k));
+            if(map.containsKey(sum-k))
+            {
+                maxLength=Math.max(maxLength,i-map.get(sum-k));
             }
-
-            // Case 3: Store sum in map if it's not already present
-            if (!map.containsKey(sum)) {
-                map.put(sum, i);
+            if(!map.containsKey(sum))
+            {
+                map.put(sum,i);
             }
         }
         return maxLength;
-        // code here
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        //  HashMap<Integer, Integer> map = new HashMap<>();
+        // int sum = 0, maxLength = 0;
+
+        // for (int i = 0; i < arr.length; i++) {
+        //     sum += arr[i];
+
+        //     // Case 1: If sum itself is k, update maxLength
+        //     if (sum == k) {
+        //         maxLength = i + 1;
+        //     }
+
+        //     // Case 2: If sum - k exists in map, update maxLength
+        //     // if (map.containsKey(sum - k)) {
+        //     //     maxLength = Math.max(maxLength, i - map.get(sum - k));
+        //     // }
+
+        //     // Case 3: Store sum in map if it's not already present
+        //     if (!map.containsKey(sum)) {
+        //         map.put(sum, i);
+        //     }
+        // }
+        // return maxLength;
+        // // code here
     }
 }

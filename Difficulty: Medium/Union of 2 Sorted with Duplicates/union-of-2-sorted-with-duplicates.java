@@ -49,8 +49,7 @@ class Main {
 class Solution {
     // Function to return a list containing the union of the two arrays.
     public static ArrayList<Integer> findUnion(int a[], int b[]) {
-        // add your code here
-        ArrayList<Integer> array=new ArrayList<>();
+        ArrayList<Integer> arr=new ArrayList<>();
         HashSet<Integer> set=new HashSet<>();
         for(int i=0;i<a.length;i++)
         {
@@ -60,12 +59,59 @@ class Solution {
         {
             set.add(b[i]);
         }
-        
-        for(Integer s:set)
+        for(Integer ele:set)
         {
-            array.add(s);
+            arr.add(ele);
         }
-        Collections.sort(array);
-        return array;
+        Collections.sort(arr);
+        return arr;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        // // add your code here
+        // ArrayList<Integer> array=new ArrayList<>();
+        // HashSet<Integer> set=new HashSet<>();
+        // for(int i=0;i<a.length;i++)
+        // {
+        //     set.add(a[i]);
+        // }
+        // for(int i=0;i<b.length;i++)
+        // {
+        //     set.add(b[i]);
+        // }
+        
+        // for(Integer s:set)
+        // {
+        //     array.add(s);
+        // }
+        // Collections.sort(array);
+        // return array;
     }
 }

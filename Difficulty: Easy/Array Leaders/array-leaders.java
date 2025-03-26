@@ -45,8 +45,9 @@ class Solution {
             if(max<=arr[i])
             {
                 array.add(arr[i]);
+                max=arr[i];
             }
-            max=Math.max(max,arr[i]);
+            // max=Math.max(max,arr[i]);
         }
         Collections.reverse(array);
         return array;

@@ -11,21 +11,21 @@ class Solution {
 
     static int findFloor(int[] arr, int x) {
         // write code here
-       int low = 0, high = arr.length - 1;
-        int floorIndex = -1;  // Default case if no element ≤ x
-
-        while (low <= high) {
-            int mid = low + (high - low) / 2; // Avoids overflow
-
-            if (arr[mid] <= x) {
-                floorIndex = mid;  // Update floor index
-                low = mid + 1;  // Move right to find last occurrence
-            } else {
-                high = mid - 1;  // Move left to find a smaller element
-            }
-        }
-
-        return floorIndex;
+      int left=0;
+      int right=arr.length-1;
+      int ans=-1;
+      while(left<=right)
+      {
+          int mid=left+(right-left)/2;
+          if(arr[mid]>x)
+          {
+              right=mid-1;
+          }else{
+              left=mid+1;
+              ans=mid;
+          }
+      }
+      return ans;
     }
 }
 

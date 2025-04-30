@@ -39,7 +39,7 @@ class Solution {
     static ArrayList<Integer> leaders(int arr[]) {
         // code here
         ArrayList<Integer> array=new ArrayList<>();
-        int max=arr[arr.length-1];
+        int max=0;
         for(int i=arr.length-1;i>=0;i--)
         {
             if(max<=arr[i])
@@ -47,7 +47,6 @@ class Solution {
                 array.add(arr[i]);
                 max=arr[i];
             }
-            // max=Math.max(max,arr[i]);
         }
         Collections.reverse(array);
         return array;

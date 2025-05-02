@@ -27,34 +27,66 @@ class GfG {
 class Solution {
     int countSubstr(String s, int k) {
         // your code here
-        return countsubwith(s,k)-countsubwith(s,k-1);
+        return countSubstringsWithKDistinct(s,k)-countSubstringsWithKDistinct(s,k-1);
         
     }
-    private static int countsubwith(String s,int k)
+    public int countSubstringsWithKDistinct(String s,int k)
     {
-        int max=0;
-        int count=0;
         int left=0;
         int right=0;
+        int count=0;
         HashMap<Character,Integer> map=new HashMap<>();
         while(right<s.length())
         {
-            Character rightCharacter=s.charAt(right);
-            map.put(rightCharacter,map.getOrDefault(rightCharacter,0)+1);
+            map.put(s.charAt(right),map.getOrDefault(s.charAt(right),0)+1);
             while(map.size()>k)
             {
-                Character ch=s.charAt(left);
+                char ch=s.charAt(left);
                 map.put(ch,map.get(ch)-1);
                 if(map.get(ch)==0)
                 {
                     map.remove(ch);
                 }
-                
                 left++;
+                
             }
             count+=right-left+1;
             right++;
         }
         return count;
     }
+    
+    
+//     import java.util.HashSet;
+
+// public class BruteForceSubstringCounter {
+
+//     public int countSubstringsWithKDistinct(String s, int k) {
+//         int n = s.length();
+//         int count = 0;
+
+//         for (int i = 0; i < n; i++) {
+//             HashSet<Character> set = new HashSet<>();
+//             for (int j = i; j < n; j++) {
+//                 set.add(s.charAt(j));
+//                 if (set.size() == k) {
+//                     count++;
+//                 } else if (set.size() > k) {
+//                     break;  // no point continuing, we already exceeded k
+//                 }
+//             }
+//         }
+
+//         return count;
+//     }
+
+//     public static void main(String[] args) {
+//         BruteForceSubstringCounter counter = new BruteForceSubstringCounter();
+//         String s = "pqpqs";
+//         int k = 2;
+//         System.out.println(counter.countSubstringsWithKDistinct(s, k));  // Output: 7
+//     }
+//}
+
 }
+
